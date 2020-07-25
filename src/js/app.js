@@ -116,3 +116,59 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 }, false);
+
+var gitgraph = new GitGraph({
+  template: "metro",
+  orientation: "vertical-reverse",
+  author: "Terje",
+  mode: "extended"
+});
+var master = gitgraph.branch("master");
+master
+    .commit("Init the project")
+    .commit("Add initial dependencies")
+    .commit("Implement High-school functionality");
+
+var highSchool = gitgraph.branch({
+  parentBranch: master,
+  name: "hs",
+  column: 1
+});
+highSchool
+    .commit("High-school stage 1/3")
+    .commit("High-school stage 2/3");
+master.commit("First introductions to Python");
+highSchool.commit("High-school stage 3/3");
+highSchool.merge(master, "Release Base build");
+master.commit("Implement Bachelor functionality")
+
+var bachelor = gitgraph.branch({
+  parentBranch: master,
+  name: "bs",
+  column: 1
+});
+bachelor
+    .commit("Set location to Tallinn University of Technology")
+    .commit("Init packages in Informatics stage 1/3")
+    .commit("Setup access to Lapikud")
+    .commit("Informatics stage 2/3");
+master.commit("Start development at Concise Systems");
+
+var concise = gitgraph.branch({
+  parentBranch: master,
+  name: "concise",
+  column: 2
+});
+
+bachelor.commit("Informatics stage 3/3");
+concise.commit("Update 1 year development streak");
+bachelor.merge(master, "Release Software developer build");
+
+var masters = gitgraph.branch({
+  parentBranch: master,
+  name: "msc",
+  column: 1
+});
+masters.commit("Init packages in Cybersecurity stage 1/2");
+
+concise.commit("Update 2 year development streak");
