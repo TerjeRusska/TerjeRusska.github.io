@@ -120,7 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
 var gitgraph = new GitGraph({
   template: "metro",
   orientation: "vertical-reverse",
-  author: "Terje",
   mode: "extended"
 });
 var master = gitgraph.branch("master");
@@ -140,7 +139,7 @@ highSchool
 master.commit("First introductions to Python");
 highSchool.commit("High-school stage 3/3");
 highSchool.merge(master, "Release Base build");
-master.commit("Implement Bachelor functionality")
+master.commit("Implement Bachelor functionality");
 
 var bachelor = gitgraph.branch({
   parentBranch: master,
@@ -169,6 +168,8 @@ var masters = gitgraph.branch({
   name: "msc",
   column: 1
 });
+
+master.commit("Implement Master's functionality");
 masters.commit("Init packages in Cybersecurity stage 1/2");
 
 concise.commit("Update 2 year development streak");
