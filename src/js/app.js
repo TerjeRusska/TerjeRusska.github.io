@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
 var gitgraph = new GitGraph({
   template: "metro",
   orientation: "vertical-reverse",
-  mode: "extended"
+  author: "",
 });
 var master = gitgraph.branch("master");
 master
