@@ -163,13 +163,12 @@ bachelor.commit("Informatics stage 3/3");
 concise.commit("Update 1 year development streak");
 bachelor.merge(master, "Release Software developer build");
 
+master.commit("Implement Master's functionality");
 var masters = gitgraph.branch({
   parentBranch: master,
   name: "msc",
   column: 1
 });
-
-master.commit("Implement Master's functionality");
 masters.commit("Init packages in Cybersecurity stage 1/2");
 
 concise.commit("Update 2 year development streak");
