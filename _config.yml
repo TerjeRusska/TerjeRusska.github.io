@@ -1,11 +1,10 @@
 # Site settings
-title: Mott status
-description: My current motivation status
+title: Mott
+description: My Mott
 
 # User settings
 username: Terje
 user_title: Software Developer
-email: terjerusska@gmail.com
 github_username:  TerjeRusska
 
 exclude: ['package.json', 'src' , 'node_modules']
