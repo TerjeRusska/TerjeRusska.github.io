@@ -9,6 +9,16 @@
 
 .tech {
   margin: 10px;
+  img {
+    width: auto;
+    height: 55px
+  }
+  @media only screen and (min-width: $cut) {
+    img {
+      width: auto;
+      height: 70px
+    }
+  }
 }
 
 .user {
